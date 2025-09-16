@@ -1,3 +1,7 @@
+# Naura Nur Faizah
+# 2408352
+# Ilmu Komputer C1
+
 # Personal Portfolio Website
 
 Website sederhana untuk mengenalkan diri saya, dibuat dengan **HTML** dan **CSS**.  
