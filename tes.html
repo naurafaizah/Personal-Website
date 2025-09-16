@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Identity</title>
+
+    <style>
+        /* Palet Warna */
+        :root {
+            --pink-soft: #FFF0F5;
+            --pink-accent: #FFB6C1;
+            --purple-accent: #D8BFD8;
+            --dark-text: #444;
+        }
+
+        /* Gaya Dasar Halaman */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--pink-soft);
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tata Letak Konten */
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            height: 100vh;
+            flex-wrap: wrap; /* biar kalo sempit bisa turun */
+        }
+
+        .content {
+            flex: 1;
+            background: var(--pink-soft);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 2rem;
+        }
+
+        /* khusus teks Hello I'm */
+        .content h3 {
+            color: var(--dark-text); 
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 60px;
+            margin-bottom: 0;     
+        }
+
+        /* khusus teks nama */
+        .content h1 {
+            font-size: 3rem;
+            font-weight: 800; /* tebal */
+            color:var(--dark-text);   
+            margin: 0;
+            margin-left: 60px;
+            line-height: 1.0;
+        }
+
+        /* profesi & univ */
+        .content h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #555;     
+            margin-left: 60px;
+            line-height: 1.0;
+        }
+
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--pink-accent);
+            clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+            overflow: hidden; /* biar foto gak keluar dari diagonal */
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* teks atas, foto bawah */
+                height: auto; /* biar ga maksa 100vh */
+            }
+
+            .content {
+                text-align: center; 
+                margin: 20px 0;
+                padding: 0 1rem;
+            }
+
+            .content h3,
+            .content h1,
+            .content h4 {
+                margin-left: 0; /* ilangin margin kiri biar rata tengah */
+            }
+
+            .content .btn {
+                margin-left: 0; /* tombol juga tengah */
+                margin-top: 10px;
+            }
+
+            .image {
+                clip-path: none; 
+                background: var(--pink-accent);
+                padding: 20px;
+                height: auto; /* jangan fix 300px, biar ngikut foto */
+            }
+
+            .image img {
+                width: 70%;   /* biar proporsional */
+                max-width: 300px; /* jangan terlalu gede di hp */
+            }
+        }
+
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Bagian Konten (Section) */
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            color: var(--purple-accent);
+            border-bottom: 2px solid var(--pink-accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #education {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .edu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .edu-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd; /* garis tipis biar keliatan kotak */
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .edu-card h3 {
+            color: #444;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        a:hover {
+            color: var(--pink-accent);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem; /* supaya ga kegedean */
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .edu-card {
+                width: 100%; /* biar full lebar di hp */
+                max-width: 300px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="content">
+        <h3>Hello I'm</h3>
+        <h1>Naura Nur Faizah</h1>
+        <h4>Computer Science, Indonesian University of Education '24</h4>
+    </div>
+    <div class="image">
+        <img src="fotonaura.png" alt="Foto Naura">
+        
+    </div>
+    </header>
+
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>Halo! aku Naura, akrab nya dipanggil Nawa👋 Mahasiswa semester 3 jurusan Ilmu Komputer di UPI. Saat ini aku aktif mengikuti kegiatan kampus seperti kepanitiaan, BEM, UKK & Komunitas dan tentunya fokus pada perkuliahan. Hmm aku tertarik pada pengembangan web dan desain tapi belum jago heheh. Kedepannya aku ingin terus mengembangkan skill di bidang teknologi dan berkontribusi lewat karya yang bermanfaat. Ohh yaa! hobi aku itu badminton, dengerin musik dan nonton film.
+            </p>
+        <section class="education">
+        <h2>Educational Background</h2>
+        <div class="edu-container">
+            <div class="edu-card">
+            <h3>SD</h3>
+            <p>SD Negeri 5 Kuala Tungkal (2012 - 2018)</p>
+            </div>
+            <div class="edu-card">
+            <h3>SMP</h3>
+            <p>SMP Negeri 2 Kuala Tungkal (2018 - 2021)</p>
+            </div>
+            <div class="edu-card">
+            <h3>SMA</h3>
+            <p>SMA Negeri 1 Tanjab Barat (2021 - 2024)</p>
+            </div>
+            <div class="edu-card">
+            <h3>Kuliah</h3>
+            <p>Universitas Pendidikan Indonesia - Ilmu Komputer (2024 - sekarang)</p>
+            </div>
+        </div>
+  
+
+        <section class="exp-grid" id="experience">
+        <h2>Experience</h2>
+            <div class="edu-container">
+            <div class="edu-card">
+            <h3>Organisasi Kampus</h3>
+            <p>Staff Pemuda BEM REMA UPI</p>
+            <p>Staff Olahraga BEM KEMAKOM UPI</p>
+            </div>
+            <div class="edu-card">
+            <h3>Kepanitiaan</h3>
+            <p>Ketua Divisi Acara Olahraga COSION</p>
+            <p>Bendahara PDDD Inaugurasi</p>
+            <p>Staff Humas P2M KEMAKOM</p>
+            <p>Staff Humas RAM KEMAKOM</p>
+            <p>Staff PDDD Bincang Karir KEMAKOM</p>
+            <p>Berbagai macam staff kepanitiaan lainnya</p>
+    
+         </div>
+            </section>
+
+        <section class="section" id="contact">
+            <h2>Contact</h2>
+            <div class="edu-container">
+            <div class="edu-card">
+            <h3>Instagram</h3>
+            <p>@naurafaizah13</p>
+            </div>
+            <div class="edu-card">
+            <h3>Email</h3>
+            <p>@naurafaizahupi.edu</p>
+            </div>
+            <div class="edu-card">
+            <h3>Facebook</h3>
+            <p>@naura.faizah.52</p>
+            </div>
+            <div class="edu-card">
+            <h3>Tiktok</h3>
+            <p>@nawfzh</p>
+        </section>
+    </div>
+
+
+</body>
+</html> 
